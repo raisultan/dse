@@ -16,5 +16,5 @@ check-milvus-port:
 
 create-collection-ads:
 	@echo "Creating collection Ads..."
-	export PYTHONPATH="$(pwd)/" && python3 app/scripts/create_collection_ads.py
+	export PYTHONPATH="$$(pwd)/" && python3 app/scripts/create_collection_ads.py
 	@echo "Ads collection created successfully!"
