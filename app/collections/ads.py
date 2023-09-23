@@ -14,7 +14,7 @@ class AdsCollection:
 
     async def search(self, project_name: str, text) -> list[dict]:
         self._collection.load()
-        entity_to_search = await create_embedding(text)
+        entity_to_search = create_embedding(text)
         search_params = {
             "metric_type": "L2",
             "params": {"nprobe": 10},
@@ -43,7 +43,7 @@ class AdsCollection:
         project_name: str,
         text: str,
     ) -> None:
-        text_embedding = await create_embedding(text)
+        text_embedding = create_embedding(text)
         data = ({
             "id": ad_id,
             "project_name": project_name,

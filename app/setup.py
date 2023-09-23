@@ -2,7 +2,7 @@ import openai
 from aiohttp.web import Application
 from pymilvus import Collection, connections
 
-from app.collection import collection_name, schema
+from app.schemas.ads import collection_name, schema
 from app.collections.ads import AdsCollection
 
 async def connect_milvus(app: Application) -> None:
@@ -27,14 +27,3 @@ async def ad_collection(app: Application) -> None:
     app["ads_collection"] = AdsCollection(
         Collection(name=collection_name, schema=schema),
     )
-
-
-"""
-connections.connect(
-    alias="default",
-    user='username',
-    password='password',
-    host='0.0.0.0',
-    port='19530',
-)
-"""
