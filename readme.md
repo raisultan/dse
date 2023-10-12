@@ -25,13 +25,7 @@ make create-collection-ads
 make start-app
 ```
 
-## Importing Data Into Vector Database
-### Export from Django as JSON
+## Importing Ads From JSON Dump
 ```shell
-python manage.py dumpdata adverts.Advert --output=bazaraki-master_ads.json
-```
-
-### Importing Ads From JSON Dump
-```shell
-make import-ads DUMP_PATH="$(pwd)/dumps/bazaraki-master_ads.json" PROJECT_NAME="bazaraki-master"
+make import-ads DUMP_PATH="$(pwd)/dumps/my_dump.json" PROJECT_NAME="my_project"
 ```
